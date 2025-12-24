@@ -756,12 +756,19 @@ body {
   /* Service Portal Carousel Styles */
   .service-portal-carousel-wrapper {
     position: relative;
+    height: 450px;
+    overflow: hidden;
   }
   
   .service-portal-swiper {
     width: 100%;
-    height: 100%;
+    height: 450px;
     position: relative;
+  }
+  
+  .service-portal-swiper .swiper-wrapper {
+    height: 100%;
+    align-items: center;
   }
   
   .service-portal-swiper .swiper-slide {
@@ -771,13 +778,50 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
   }
   
   .service-portal-swiper .swiper-slide img {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    max-width: 100%;
+    max-height: 410px;
+    object-fit: contain;
+    object-position: center;
+    margin: 0 auto;
+  }
+  
+  @media (max-width: 992px) {
+    .service-portal-carousel-wrapper,
+    .service-portal-swiper {
+      height: 400px;
+    }
+    
+    .service-portal-swiper .swiper-slide {
+      padding: 15px;
+    }
+    
+    .service-portal-swiper .swiper-slide img {
+      max-height: 370px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .service-portal-carousel-wrapper,
+    .service-portal-swiper {
+      height: 350px;
+    }
+    
+    .service-portal-swiper .swiper-slide {
+      padding: 10px;
+    }
+    
+    .service-portal-swiper .swiper-slide img {
+      max-height: 330px;
+    }
   }
   
   .service-portal-swiper .swiper-button-next,
